@@ -19,7 +19,7 @@ class App extends React.Component {
           <Route path="/profile/edit" render={ () => <ProfileEdit /> } />
           <Route path="/profile" render={ () => <Profile /> } />
           <Route path="/favorites" render={ () => <Favorites /> } />
-          <Route path="/album/:id" render={ () => <Album /> } />
+          <Route path="/album/:id" render={ (props) => <Album data={ props } /> } />
           <Route path="/search" render={ () => <Search /> } />
           <Route exact path="/" render={ () => <Login /> } />
           <Route path="*" render={ () => <NotFound /> } />
