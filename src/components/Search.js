@@ -42,7 +42,6 @@ class SearchForm extends React.Component {
 
     const response = await searchAlbumsAPI(artist);
     if (typeof response === 'object') {
-      console.log(response);
       this.setState({
         loading: false,
         artists: [...response],

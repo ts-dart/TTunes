@@ -13,6 +13,11 @@ class MusicCard extends React.Component {
     };
 
     this.checkValidation = this.checkValidation.bind(this);
+    this.checkValidationFavSongs = this.checkValidationFavSongs.bind(this);
+  }
+
+  componentDidMount() {
+    this.checkValidationFavSongs();
   }
 
   async checkValidation() {
@@ -30,18 +35,30 @@ class MusicCard extends React.Component {
     }
   }
 
+  checkValidationFavSongs() {
+    const {
+      music,
+      favSong,
+    } = this.props;
+
+    if (music === favSong.trackName) {
+      this.setState((prev) => ({ marked: !prev.marked }));
+    }
+  }
+
   render() {
     const {
       music,
       preview,
       trackId,
+      favSong,
     } = this.props;
 
     const {
       loading,
       marked,
     } = this.state;
-    console.log(trackId);
+
     return (
       <div>
         { loading
@@ -66,7 +83,6 @@ class MusicCard extends React.Component {
                   data-testid={ `checkbox-music-${trackId}` }
                 />
               </label>
-              <h1>{ trackId }</h1>
             </div>
           )}
       </div>

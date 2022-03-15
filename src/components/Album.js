@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import MusicCard from './MusicCard';
-import getMusics from '../services/musicsAPI';
 import Loading from '../pages/Loading';
-
-const NUM_OBJ_SONGS = 13;
+import getMusics from '../services/musicsAPI';
+import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 
 class AlbumComponent extends React.Component {
   constructor() {
@@ -15,17 +14,32 @@ class AlbumComponent extends React.Component {
       musics: [],
       preview: [],
       trackId: [],
+      favSongs: [],
       artist: '',
       collection: '',
+      numObjSongs: '',
       loading: true,
     };
 
     this.getResponseFromApi = this.getResponseFromApi.bind(this);
     this.getValues = this.getValues.bind(this);
+    this.getSongsFromApi = this.getSongsFromApi.bind(this);
   }
 
   componentDidMount() {
     this.getResponseFromApi();
+    this.getSongsFromApi();
+  }
+
+  async getSongsFromApi() {
+    const response = await getFavoriteSongs();
+
+    if (typeof response === 'object') {
+      this.setState({
+        loading: false,
+        favSongs: [...response],
+      });
+    }
   }
 
   async getResponseFromApi() {
@@ -54,7 +68,7 @@ class AlbumComponent extends React.Component {
     this.setState({
       artist: artistName,
       collection: collectionName,
-      loading: false,
+      numObjSongs: musicsObj.length,
       trackId: [...trackId],
       musics: [...musicsList],
       preview: [...previewList],
@@ -70,13 +84,14 @@ class AlbumComponent extends React.Component {
       loading,
       musicsObj,
       trackId,
+      favSongs,
+      numObjSongs,
     } = this.state;
 
-    if (musicsObj.length === NUM_OBJ_SONGS) {
+    if (musicsObj.length === numObjSongs) {
       musicsObj.shift();
-      console.log(musicsObj);
     }
-
+    console.log(musicsObj);
     return (
       <div>
         { loading
@@ -92,6 +107,9 @@ class AlbumComponent extends React.Component {
                   preview={ preview[index] }
                   obj={ musicsObj[index] }
                   trackId={ trackId[index] }
+                  favSong={ favSongs[index] !== undefined
+                    ? favSongs[index]
+                    : '' }
                 />)) }
               </div>
             </div>
