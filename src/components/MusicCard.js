@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Loading from '../pages/Loading';
-import { addSong } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
 
 class MusicCard extends React.Component {
   constructor() {
@@ -13,11 +13,21 @@ class MusicCard extends React.Component {
     };
 
     this.checkValidation = this.checkValidation.bind(this);
-    this.checkValidationFavSongs = this.checkValidationFavSongs.bind(this);
+    this.getSongsFromApi = this.getSongsFromApi.bind(this);
+    /* this.checkValidationFavSongs = this.checkValidationFavSongs.bind(this); */
   }
 
   componentDidMount() {
-    this.checkValidationFavSongs();
+    this.getSongsFromApi();
+  }
+
+  async getSongsFromApi() {
+    const { music } = this.props;
+    const response = await getFavoriteSongs();
+
+    if (response.some((obj) => obj.trackName === music)) {
+      this.setState((prev) => ({ marked: !prev.marked }));
+    }
   }
 
   async checkValidation() {
@@ -35,7 +45,7 @@ class MusicCard extends React.Component {
     }
   }
 
-  checkValidationFavSongs() {
+  /* checkValidationFavSongs() {
     const {
       music,
       favSong,
@@ -44,7 +54,7 @@ class MusicCard extends React.Component {
     if (music === favSong.trackName) {
       this.setState((prev) => ({ marked: !prev.marked }));
     }
-  }
+  } */
 
   render() {
     const {
@@ -94,7 +104,7 @@ MusicCard.propTypes = {
   preview: PropTypes.string.isRequired,
   trackId: PropTypes.string.isRequired,
   obj: PropTypes.objectOf(PropTypes.any).isRequired,
-  favSong: PropTypes.objectOf(PropTypes.any).isRequired,
+  /* favSong: PropTypes.objectOf(PropTypes.any).isRequired, */
 };
 
 export default MusicCard;

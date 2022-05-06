@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import MusicCard from './MusicCard';
 import Loading from '../pages/Loading';
 import getMusics from '../services/musicsAPI';
-import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 
 class AlbumComponent extends React.Component {
   constructor() {
@@ -14,7 +13,6 @@ class AlbumComponent extends React.Component {
       musics: [],
       preview: [],
       trackId: [],
-      favSongs: [],
       artist: '',
       collection: '',
       numObjSongs: '',
@@ -23,29 +21,20 @@ class AlbumComponent extends React.Component {
 
     this.getResponseFromApi = this.getResponseFromApi.bind(this);
     this.getValues = this.getValues.bind(this);
-    this.getSongsFromApi = this.getSongsFromApi.bind(this);
   }
 
   componentDidMount() {
     this.getResponseFromApi();
-    this.getSongsFromApi();
-  }
-
-  async getSongsFromApi() {
-    const response = await getFavoriteSongs();
-
-    if (typeof response === 'object') {
-      this.setState({
-        loading: false,
-        favSongs: [...response],
-      });
-    }
   }
 
   async getResponseFromApi() {
     const { id } = this.props;
     const response = await getMusics(id);
-    this.setState({ musicsObj: [...response] }, this.getValues);
+
+    this.setState({
+      musicsObj: [...response],
+      loading: !Array.isArray(response),
+    }, this.getValues);
   }
 
   getValues() {
@@ -84,14 +73,13 @@ class AlbumComponent extends React.Component {
       loading,
       musicsObj,
       trackId,
-      favSongs,
       numObjSongs,
     } = this.state;
 
     if (musicsObj.length === numObjSongs) {
       musicsObj.shift();
     }
-    console.log(musicsObj);
+
     return (
       <div>
         { loading
@@ -107,9 +95,6 @@ class AlbumComponent extends React.Component {
                   preview={ preview[index] }
                   obj={ musicsObj[index] }
                   trackId={ trackId[index] }
-                  favSong={ favSongs[index] !== undefined
-                    ? favSongs[index]
-                    : '' }
                 />)) }
               </div>
             </div>
