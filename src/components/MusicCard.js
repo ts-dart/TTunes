@@ -1,7 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Loading from '../pages/Loading';
-import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
+
+import {
+  addSong,
+  getFavoriteSongs,
+  removeSong,
+} from '../services/favoriteSongsAPI';
 
 class MusicCard extends React.Component {
   constructor() {
@@ -14,7 +19,7 @@ class MusicCard extends React.Component {
 
     this.checkValidation = this.checkValidation.bind(this);
     this.getSongsFromApi = this.getSongsFromApi.bind(this);
-    /* this.checkValidationFavSongs = this.checkValidationFavSongs.bind(this); */
+    this.convertValue = this.convertValue.bind(this);
   }
 
   componentDidMount() {
@@ -24,37 +29,45 @@ class MusicCard extends React.Component {
   async getSongsFromApi() {
     const { music } = this.props;
     const response = await getFavoriteSongs();
+    const arr = response.length > 0 ? response : [];
 
-    if (response.some((obj) => obj.trackName === music)) {
+    if (arr.some((obj) => obj.trackName === music)) {
       this.setState((prev) => ({ marked: !prev.marked }));
     }
   }
 
-  async checkValidation() {
-    const { obj } = this.props;
-
+  async convertValue(func, obj) {
     this.setState((prev) => ({
       marked: !prev.marked,
       loading: true,
     }));
 
-    const response = await addSong(obj);
+    const response = await func(obj);
 
     if (response === 'OK') {
       this.setState({ loading: false });
     }
   }
 
-  /* checkValidationFavSongs() {
-    const {
-      music,
-      favSong,
-    } = this.props;
+  checkValidation() {
+    const { marked } = this.state;
+    const { obj } = this.props;
 
-    if (music === favSong.trackName) {
-      this.setState((prev) => ({ marked: !prev.marked }));
-    }
-  } */
+    if (marked === false) this.convertValue(addSong, obj);
+    else this.convertValue(removeSong, obj);
+
+    /* this.setState((prev) => ({
+      marked: !prev.marked,
+      loading: true,
+    }));
+
+    const response = await addSong(obj);
+    const responseTwo = await removeSong(obj);
+
+    if (response === 'OK') {
+      this.setState({ loading: false });
+    } */
+  }
 
   render() {
     const {
