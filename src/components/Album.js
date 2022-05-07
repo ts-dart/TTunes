@@ -64,6 +64,8 @@ class AlbumComponent extends React.Component {
     });
   }
 
+  clearList = (music) => music;
+
   render() {
     const {
       musics,
@@ -95,6 +97,7 @@ class AlbumComponent extends React.Component {
                   preview={ preview[index] }
                   obj={ musicsObj[index] }
                   trackId={ trackId[index] }
+                  clearList={ this.clearList }
                 />)) }
               </div>
             </div>

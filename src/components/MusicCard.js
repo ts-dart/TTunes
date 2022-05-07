@@ -47,6 +47,9 @@ class MusicCard extends React.Component {
     if (response === 'OK') {
       this.setState({ loading: false });
     }
+
+    const { clearList, music } = this.props;
+    clearList(music);
   }
 
   checkValidation() {
@@ -55,18 +58,6 @@ class MusicCard extends React.Component {
 
     if (marked === false) this.convertValue(addSong, obj);
     else this.convertValue(removeSong, obj);
-
-    /* this.setState((prev) => ({
-      marked: !prev.marked,
-      loading: true,
-    }));
-
-    const response = await addSong(obj);
-    const responseTwo = await removeSong(obj);
-
-    if (response === 'OK') {
-      this.setState({ loading: false });
-    } */
   }
 
   render() {
@@ -117,7 +108,7 @@ MusicCard.propTypes = {
   preview: PropTypes.string.isRequired,
   trackId: PropTypes.string.isRequired,
   obj: PropTypes.objectOf(PropTypes.any).isRequired,
-  /* favSong: PropTypes.objectOf(PropTypes.any).isRequired, */
+  clearList: PropTypes.func.isRequired,
 };
 
 export default MusicCard;
