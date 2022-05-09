@@ -60,7 +60,9 @@ class ProfileComponent extends React.Component {
                 data-testid="profile-image"
               />
               <Link to="/profile/edit">
-                Editar perfil
+                <button type="button">
+                  Editar perfil
+                </button>
               </Link>
             </div>
           )}

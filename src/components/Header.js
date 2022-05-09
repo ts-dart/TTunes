@@ -23,7 +23,7 @@ class Header extends React.Component {
     const response = await getUser();
     const { name } = response;
 
-    if (typeof name === 'string') {
+    if (typeof response === 'object') {
       this.setState({
         userName: name,
         loading: false,

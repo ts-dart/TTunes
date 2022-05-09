@@ -28,9 +28,6 @@ class Favorites extends React.Component {
     });
   }
 
-  /* fazer varias requisões dentro do update ou
-  pegar o nome ques sesta sendo desfavoritado atrazes do cleanList enviando ele para o musicCard */
-
   clearList = async (music) => {
     const { musics } = this.state;
     const ARR = musics.filter((obj) => obj.trackName !== music);
