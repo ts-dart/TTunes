@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import MusicCard from './MusicCard';
 import Loading from '../pages/Loading';
 import getMusics from '../services/musicsAPI';
+import '../style/album.css';
 
 class AlbumComponent extends React.Component {
   constructor() {
@@ -83,14 +84,16 @@ class AlbumComponent extends React.Component {
     }
 
     return (
-      <div>
+      <div className="display">
         { loading
           ? <Loading />
           : (
-            <div>
-              <h1 data-testid="artist-name">{ artist }</h1>
-              <h2 data-testid="album-name">{ collection }</h2>
-              <div>
+            <div className="album-display">
+              <div className="names-id">
+                <h1 data-testid="artist-name" className="txt">{ artist }</h1>
+                <h2 data-testid="album-name" className="txt">{ collection }</h2>
+              </div>
+              <div className="playersContainer">
                 { musics.map((music, index) => (<MusicCard
                   key={ music }
                   music={ music }

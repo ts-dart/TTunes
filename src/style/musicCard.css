@@ -1,0 +1,40 @@
+#fav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  width: 95%;
+  margin-bottom: 10px;
+}
+
+.player {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px;
+}
+
+.playerUp {
+  width: 49%;
+  margin-bottom: 15px;
+  background-color: #27aa7a;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px 1px #1d815d;
+}
+
+#labelFav {
+  display: flex;
+  flex-flow: row;
+  width: 80px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.favP {
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0%;
+}

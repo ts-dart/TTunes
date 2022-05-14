@@ -1,0 +1,19 @@
+#form-search {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  margin: 50px auto 0px;
+  width: 50%;
+  height: 150px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#not-found-album {
+  text-align: center;
+}
+
+#message {
+  text-align: center;
+}

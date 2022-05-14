@@ -9,9 +9,9 @@ class Album extends Component {
 
     return (
       <div>
-        <h1 data-testid="page-album">
+        <span data-testid="page-album">
           <Header />
-        </h1>
+        </span>
         <AlbumComponent id={ data.match.params.id } />
       </div>
     );

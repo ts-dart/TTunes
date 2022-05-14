@@ -1,0 +1,25 @@
+#albumCard {
+  margin: 30px auto 10px;
+  width: 40%;
+  padding: 10px;
+  border-top: solid 2px #CED4DA ;
+  /* box-shadow: 0px 3px 1px #34cc94; */
+}
+
+.ghost {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0.0%;
+  height: 1px;
+  width: 1%;
+}
+
+#album-btn {
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+#album-btn:hover {
+  background-color: #145f44;
+}

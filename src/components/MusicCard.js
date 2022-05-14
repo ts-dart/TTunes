@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Loading from '../pages/Loading';
+import '../style/musicCard.css';
 
 import {
   addSong,
@@ -73,29 +74,35 @@ class MusicCard extends React.Component {
     } = this.state;
 
     return (
-      <div>
+      <div className="playerUp">
         { loading
           ? <Loading />
           : (
-            <div>
-              <p>{ music }</p>
-              <audio data-testid="audio-component" src={ preview } controls>
+            <div className="player">
+              <div id="fav">
+                <p className="favP">{ music }</p>
+                <label htmlFor="fav" id="labelFav">
+                  <p className="favP">Favoritar</p>
+                  <input
+                    type="checkbox"
+                    checked={ marked }
+                    onChange={ this.checkValidation }
+                    data-testid={ `checkbox-music-${trackId}` }
+                  />
+                </label>
+              </div>
+              <audio
+                data-testid="audio-component"
+                src={ preview }
+                id="sound"
+                controls
+              >
                 <track kind="captions" />
                 O seu navegador não suporta o elemento
                 {' '}
                 <code>audio</code>
                 .
               </audio>
-              <label htmlFor="fav">
-                Favorita
-                <input
-                  type="checkbox"
-                  id="fav"
-                  checked={ marked }
-                  onChange={ this.checkValidation }
-                  data-testid={ `checkbox-music-${trackId}` }
-                />
-              </label>
             </div>
           )}
       </div>

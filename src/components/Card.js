@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import '../style/card.css';
 
 class Card extends Component {
   render() {
@@ -16,23 +17,26 @@ class Card extends Component {
     } = this.props;
 
     return (
-      <div>
+      <div id="albumCard">
         <h1>{ collectionName }</h1>
-        <p>{ collectionId }</p>
+        <p className="ghost">{ collectionId }</p>
         Artista:
         <h2>{ artistName }</h2>
-        <p>{ artistId }</p>
+        <p className="ghost">{ artistId }</p>
         Preço:
         <h3>{ collectionPrice }</h3>
-        Lançamento
+        Lançamento:
         <h3>{ releaseDate }</h3>
-        <h4>{ artworkUrl100 }</h4>
+        <h4 className="ghost">{ artworkUrl100 }</h4>
+        Musicas:
         <h4>{ trackCount }</h4>
         <Link
           to={ `/album/${collectionId}` }
           data-testid={ `link-to-album-${collectionId}` }
         >
-          Ver album
+          <button type="button" id="album-btn" className="btn btn-lg btn-success">
+            Ver album
+          </button>
         </Link>
       </div>
     );

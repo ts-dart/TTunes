@@ -1,0 +1,31 @@
+.album-display {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 10px auto 0px;
+  width: 100%;
+}
+
+.display {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 10px auto 0px;
+  width: 50%;
+  padding: 15px;
+}
+
+.names-id {
+  border-bottom: solid 2px #CED4DA ;
+}
+
+.playersContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.txt {
+  text-shadow: 1px 1px 1px black;
+}

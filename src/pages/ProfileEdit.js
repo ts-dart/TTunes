@@ -85,51 +85,65 @@ class ProfileEdit extends React.Component {
     } = this.state;
 
     return (
-      <div>
+      <>
         <Header />
-        { loading
-          ? <Loading />
-          : (
-            <div data-testid="page-profile-edit">
-              <div>
-                <input
-                  data-testid="edit-input-name"
-                  name="name"
-                  value={ name }
-                  onChange={ (event) => this.handlerForm(event) }
-                />
-                <input
-                  data-testid="edit-input-email"
-                  name="email"
-                  value={ email }
-                  onChange={ (event) => this.handlerForm(event) }
-                />
-                <input
-                  data-testid="edit-input-description"
-                  name="description"
-                  value={ description }
-                  onChange={ (event) => this.handlerForm(event) }
-                />
-                <input
-                  data-testid="edit-input-image"
-                  name="image"
-                  value={ image }
-                  onChange={ (event) => this.handlerForm(event) }
-                />
-                <Link to="/profile">
-                  <button
-                    type="button"
-                    data-testid="edit-button-save"
-                    disabled={ able }
-                    onClick={ this.modUser }
-                  >
-                    CLICK
-                  </button>
-                </Link>
-              </div>
+        <div className="display">
+          <div className="album-display">
+            <div className="names-id">
+              <h1 className="txt">Editar Perfil</h1>
             </div>
-          ) }
-      </div>
+            { loading
+              ? <Loading />
+              : (
+                <div data-testid="page-profile-edit" id="form-edit-profile">
+                  Nome:
+                  <input
+                    data-testid="edit-input-name"
+                    name="name"
+                    value={ name }
+                    onChange={ (event) => this.handlerForm(event) }
+                    className="form-control"
+                  />
+                  Email:
+                  <input
+                    data-testid="edit-input-email"
+                    name="email"
+                    value={ email }
+                    onChange={ (event) => this.handlerForm(event) }
+                    className="form-control"
+                  />
+                  Descrição:
+                  <input
+                    data-testid="edit-input-description"
+                    name="description"
+                    value={ description }
+                    onChange={ (event) => this.handlerForm(event) }
+                    className="form-control"
+                  />
+                  Imagem:
+                  <input
+                    data-testid="edit-input-image"
+                    name="image"
+                    value={ image }
+                    onChange={ (event) => this.handlerForm(event) }
+                    className="form-control"
+                  />
+                  <Link to="/profile">
+                    <button
+                      type="button"
+                      data-testid="edit-button-save"
+                      disabled={ able }
+                      onClick={ this.modUser }
+                      id="btn-profile"
+                    >
+                      Enviar
+                    </button>
+                  </Link>
+                </div>
+              ) }
+          </div>
+        </div>
+      </>
     );
   }
 }

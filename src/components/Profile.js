@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
 import Loading from '../pages/Loading';
+import '../style/profile.css';
 
 class ProfileComponent extends React.Component {
   constructor() {
@@ -46,24 +47,35 @@ class ProfileComponent extends React.Component {
     } = this.state;
 
     return (
-      <div>
+      <div className="display">
         { loading
           ? <Loading />
           : (
-            <div>
-              <h1>{ name }</h1>
-              <h2>{ description }</h2>
-              <h2>{ email }</h2>
-              <img
-                src={ image }
-                alt="Imagem do usuario"
-                data-testid="profile-image"
-              />
-              <Link to="/profile/edit">
-                <button type="button">
-                  Editar perfil
-                </button>
-              </Link>
+            <div className="album-display">
+              <div className="names-id">
+                <h1 className="txt">Perfil</h1>
+              </div>
+              <div className="contentProfile">
+                <img
+                  src={ image }
+                  alt="Imagem do usuario"
+                  data-testid="profile-image"
+                  id="user-image"
+                />
+                <div id="user-data">
+                  Nome:
+                  <p>{ name }</p>
+                  Descrição:
+                  <p>{ description }</p>
+                  Email:
+                  <p>{ email }</p>
+                  <Link to="/profile/edit">
+                    <button type="button" className="btn btn-lg btn-success">
+                      Editar perfil
+                    </button>
+                  </Link>
+                </div>
+              </div>
             </div>
           )}
       </div>

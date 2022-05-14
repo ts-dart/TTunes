@@ -1,0 +1,19 @@
+#not-found {
+  margin: 30px auto;
+  width: 50%;
+  height: 350px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#img {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+}
+
+#txt {
+  font-size: 18px;
+}
