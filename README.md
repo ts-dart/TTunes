@@ -1,4 +1,14 @@
-# O que foi desenvolvido
+# Projeto TrybeTunes
+### Orientações
+Faça o git clone:
+
+    git@github.com:ts-dart/Blogs-API.git
+
+Faça a instalação dos pacotes:
+
+    npm install
+
+### O que foi desenvolvido
 
 Neste projeto foi criado o TrybeTunes, uma app web que pode reproduzir o preview de musicas de diversos artistas, também e possivel ao usario criar uma lista de musicas favoritas e criar um perfil de usuario;
 
@@ -14,7 +24,7 @@ E possivel ao usuario:
   - Ver o perfil da pessoa logada;
   - Editar o perfil da pessoa logada;
 
-## Habilidades desenvolvidas no projeto
+### Habilidades desenvolvidas no projeto
 
   * Fazer requisições e consumir dados vindos de uma `API`;
 
