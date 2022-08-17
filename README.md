@@ -1,6 +1,6 @@
 # Projeto TrybeTunes
 ### Orientações
-A aplicação esta no online, acesse atravez so link abaixo:
+A aplicação esta no online, acesse atravez do link abaixo:
 
     https://ttunesv1.herokuapp.com/
 
@@ -46,4 +46,4 @@ E possivel ao usuario:
 
   * Criar links de navegação na aplicação com o componente `Link`;
   
-  * Deploy da aplicação foi feito utilizando Heroku
+  * Deploy da aplicação foi feito utilizando Heroku;
