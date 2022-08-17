@@ -1,8 +1,12 @@
 # Projeto TrybeTunes
 ### Orientações
+A aplicação esta no online, acesse atravez so link abaixo:
+
+    https://ttunesv1.herokuapp.com/
+
 Faça o git clone:
 
-    git@github.com:ts-dart/Blogs-API.git
+    git@github.com:ts-dart/TTunes.git
 
 Faça a instalação dos pacotes:
 
@@ -30,14 +34,16 @@ E possivel ao usuario:
 
   * Utilizar os ciclos de vida de um componente React;
 
-  * Utilizar a função `setState` de forma a garantir que um determinado código só é executado após o estado ser atualizado
+  * Utilizar a função `setState` de forma a garantir que um determinado código só é executado após o estado ser atualizado;
   
   * Utilizar o componente `BrowserRouter` corretamente;
 
   * Criar rotas, mapeando o caminho da URL com o componente correspondente, via `Route`;
 
-  * Utilizar o `Switch` do `React Router`
+  * Utilizar o `Switch` do `React Router`;
 
   * Usar o componente `Redirect` pra redirecionar para uma rota específica;
 
   * Criar links de navegação na aplicação com o componente `Link`;
+  
+  * Deploy da aplicação foi feito utilizando Heroku
