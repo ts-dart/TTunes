@@ -14,7 +14,7 @@ Faça a instalação dos pacotes:
 
 ### O que foi desenvolvido
 
-Neste projeto foi criado o TrybeTunes, uma app web que pode reproduzir o preview de musicas de diversos artistas, também e possivel ao usario criar uma lista de musicas favoritas e criar um perfil de usuario;
+Neste projeto foi criado o TrybeTunes, uma app web que pode reproduzir o preview de musicas de diversos artistas, também e possivel ao usario criar uma lista de musicas favoritas e criar um perfil de usuario.
 
 E possivel ao usuario:
 
