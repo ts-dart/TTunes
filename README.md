@@ -1,5 +1,9 @@
 # Projeto TrybeTunes
 ### Orientações
+A aplicação esta no online, acesse atravez do link abaixo:
+
+    https://t-tunes.vercel.app/
+    
 Faça o git clone:
 
     git@github.com:ts-dart/TTunes.git
