@@ -41,7 +41,7 @@ class Login extends React.Component {
     const response = await createUser({
       name,
       email: 'Preencha seu email',
-      image: 'https://cdn.pixabay.com/photo/2022/05/11/22/11/icon-7190310_960_720.jpg',
+      image: './images/avatar.jpg',
       description: 'Preencha sua descrição',
     });
 
@@ -64,11 +64,17 @@ class Login extends React.Component {
         {loading
           ? <Loading />
           : (
-            <>
+            <div id='content-login-page'>
+              {/* <img src="./images/art-login.svg" id='art' alt='art'/> */}
               <img
                 id="ImgLoginScreen"
                 // eslint-disable-next-line react/jsx-max-props-per-line
-                src="https://cdn.pixabay.com/photo/2022/05/11/01/11/music-7188266_960_720.jpg" alt="Imagem TTunes"
+                src="./images/logo-music-ttnues.svg" alt="Imagem TTunes"
+              />
+              <img 
+                id='art-page-login' 
+                src='./images/undraw_happy_music_g6wc.svg'
+                alt=''
               />
               <div data-testid="page-login" id="form">
                 <label htmlFor="nameInput" id="nameLabel">
@@ -94,7 +100,7 @@ class Login extends React.Component {
                   Entrar
                 </button>
               </div>
-            </>
+            </div>
           )}
         { loading === false ? <Redirect to="/search" /> : '' }
       </>

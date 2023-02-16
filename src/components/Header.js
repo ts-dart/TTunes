@@ -41,14 +41,14 @@ class Header extends React.Component {
     return (
       <header data-testid="header-component" id="header">
         <div id="links">
-          <a href="https://icons8.com/icon/118990/música" target="__blank">
+          <Link to="/search" className="link">
             <img
-              src="https://img.icons8.com/cute-clipart/344/music.png"
+              src="./images/logo-music-ttnues.svg"
               alt="icon"
               width="35px"
               height="35px"
             />
-          </a>
+          </Link>
           <Link to="/search" data-testid="link-to-search" className="link">
             Pesquisar
           </Link>
