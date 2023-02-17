@@ -49,6 +49,7 @@ class SearchForm extends React.Component {
         artists: [...response],
         requested: true,
         message: `Resultado de álbuns de: ${artist}`,
+        disabled: true,
       });
     }
 
@@ -61,15 +62,15 @@ class SearchForm extends React.Component {
     message,
     artists,
   ) => {
-    if (loading === true && requested === true) {
-      return <Loading />;
+    if (loading === true) {
+      return <Loading typeLoadingClass={'loading-position-center-color-green'}/>;
     }
 
     if (artists.length <= 0 && requested === true) {
       return <p id="message">Nenhum álbum foi encontrado</p>;
     }
 
-    if (loading === false && requested === true) {
+    if (requested === true) {
       return (
         <>
           <p id="message">{ message }</p>
@@ -98,7 +99,7 @@ class SearchForm extends React.Component {
       message,
       artists,
     } = this.state;
-
+    console.log('to nesse componente C');
     return (
       <>
         { loading === false

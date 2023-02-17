@@ -60,7 +60,7 @@ class Header extends React.Component {
           </Link>
         </div>
 
-        { loading ? <Loading /> : ''}
+        { loading ? <Loading typeLoadingClass={'loading-header'}/> : ''}
         { !loading ? <p data-testid="header-user-name" id="name">{ userName }</p> : ''}
       </header>
     );

@@ -76,7 +76,7 @@ class MusicCard extends React.Component {
     return (
       <div className="playerUp">
         { loading
-          ? <Loading />
+          ? <Loading typeLoadingClass={'loading-music-card'}/>
           : (
             <div className="player">
               <div id="fav">

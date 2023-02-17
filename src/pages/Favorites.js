@@ -42,27 +42,29 @@ class Favorites extends React.Component {
         <Header />
         <div data-testid="page-favorites" className="display">
           <div className="album-display">
-            <div className="names-id">
-              <h1 className="txt">Musicas Favoritas</h1>
-            </div>
             { loading && musics.length <= 0
-              ? <Loading />
-              : ''}
-
-            { !loading && musics.length > 0
-              ? (
-                <div className="playersContainer">
-                  { musics.map((music, index) => (<MusicCard
-                    key={ music.trackId }
-                    music={ music.trackName }
-                    preview={ music.previewUrl }
-                    obj={ musics[index] }
-                    trackId={ music.trackId }
-                    clearList={ this.clearList }
-                  />)) }
-                </div>
-              )
-              : <p>Você não tem musicas favoritadas</p>}
+              ? <Loading typeLoadingClass={'loading-position-center-color-green'}/>
+              : (
+                <div>
+                  <div className="names-id">
+                    <h1 className="txt">Musicas Favoritas</h1>
+                  </div>
+                    { musics.length > 0
+                      ? (
+                        <div className="playersContainer">
+                          { musics.map((music, index) => (<MusicCard
+                            key={ music.trackId }
+                            music={ music.trackName }
+                            preview={ music.previewUrl }
+                            obj={ musics[index] }
+                            trackId={ music.trackId }
+                            clearList={ this.clearList }
+                          />)) }
+                        </div>
+                      )
+                      : <p>Você não tem musicas favoritadas</p>}
+                  </div>
+              )}
           </div>
         </div>
       </>

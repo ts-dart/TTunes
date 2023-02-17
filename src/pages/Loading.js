@@ -3,9 +3,11 @@ import '../style/loading.css';
 
 class Loading extends React.Component {
   render() {
+    const { typeLoadingClass } = this.props;
+
     return (
-      <div id="container">
-        <h1 id="txt">Carregando...</h1>
+      <div id="container" className={typeLoadingClass}>
+        <h1 id='txt-header'>Carregando...</h1>
       </div>
     );
   }

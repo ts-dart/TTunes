@@ -62,7 +62,7 @@ class Login extends React.Component {
     return (
       <>
         {loading
-          ? <Loading />
+          ? <Loading typeLoadingClass={'loading-position-center-color-green'}/>
           : (
             <div id='content-login-page'>
               {/* <img src="./images/art-login.svg" id='art' alt='art'/> */}

@@ -49,7 +49,7 @@ class ProfileComponent extends React.Component {
     return (
       <div className="display">
         { loading
-          ? <Loading />
+          ? <Loading typeLoadingClass={'loading-position-center-color-green'}/>
           : (
             <div className="album-display">
               <div className="names-id">
