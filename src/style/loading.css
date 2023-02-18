@@ -5,22 +5,22 @@
 }
 
 .loading-position-center-color-green {
-  position: absolute;
+  /* position: absolute;
   top: 300px;
-  left: 600px;
-  color: #34CC94;
+  left: 650px; */
+  margin: 230px auto;
 }
 
-.loading-header h1{
-  color: white;
-  font-size: 16px;
+.loading-position-center-color-green img {
+  width: 100px;
+}
+
+.loading-header img{
+  width: 50px;
   margin-bottom: 0px;
-  font-weight: bold;
 }
 
-.loading-music-card h1{
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
+.loading-music-card img{
+  width: 50px;
   margin: 40px auto 40px;
 }

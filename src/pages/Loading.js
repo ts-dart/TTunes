@@ -7,7 +7,7 @@ class Loading extends React.Component {
 
     return (
       <div id="container" className={typeLoadingClass}>
-        <h1 id='txt-header'>Carregando...</h1>
+        <img src='images/loading.gif' />
       </div>
     );
   }

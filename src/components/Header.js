@@ -43,7 +43,7 @@ class Header extends React.Component {
         <div id="links">
           <Link to="/search" className="link">
             <img
-              src="./images/logo-music-ttnues.svg"
+              src="https://raw.githubusercontent.com/ts-dart/TTunes/8098ed193149395f763e4baf538ffaa0ecf81e5f/public/images/logo-music-ttnues.svg"
               alt="icon"
               width="35px"
               height="35px"
