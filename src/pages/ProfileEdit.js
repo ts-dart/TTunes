@@ -93,7 +93,7 @@ class ProfileEdit extends React.Component {
               <h1 className="txt">Editar Perfil</h1>
             </div>
             { loading
-              ? <Loading />
+              ? <Loading typeLoadingClass={'loading-position-center-color-green'}/>
               : (
                 <div data-testid="page-profile-edit" id="form-edit-profile">
                   Nome:

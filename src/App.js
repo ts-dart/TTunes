@@ -9,6 +9,7 @@ import ProfileEdit from './pages/ProfileEdit';
 import NotFound from './pages/NotFound';
 import Loading from './pages/Loading';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './style/index.css';
 
 class App extends React.Component {
   render() {

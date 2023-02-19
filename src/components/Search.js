@@ -74,17 +74,19 @@ class SearchForm extends React.Component {
       return (
         <>
           <p id="message">{ message }</p>
-          { artists.map((curr, index) => (<Card
-            key={ index }
-            artistId={ curr.artistId }
-            artistName={ curr.artistName }
-            collectionId={ curr.collectionId }
-            collectionName={ curr.collectionName }
-            collectionPrice={ curr.collectionPrice }
-            artworkUrl100={ curr.artworkUrl100 }
-            releaseDate={ curr.releaseDate }
-            trackCount={ curr.trackCount }
-          />)) }
+          <div id='cards-content'>
+            { artists.map((curr, index) => (<Card
+              key={ index }
+              artistId={ curr.artistId }
+              artistName={ curr.artistName }
+              collectionId={ curr.collectionId }
+              collectionName={ curr.collectionName }
+              collectionPrice={ curr.collectionPrice }
+              artworkUrl100={ curr.artworkUrl100 }
+              releaseDate={ curr.releaseDate }
+              trackCount={ curr.trackCount }
+            />)) }
+          </div>
         </>
       );
     }

@@ -94,7 +94,7 @@ class MusicCard extends React.Component {
               <audio
                 data-testid="audio-component"
                 src={ preview }
-                id="sound"
+                id="audio-component"
                 controls
               >
                 <track kind="captions" />

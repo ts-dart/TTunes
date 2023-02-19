@@ -7,7 +7,7 @@ class Loading extends React.Component {
 
     return (
       <div id="container" className={typeLoadingClass}>
-        <img src='images/loading.gif' />
+        <img src='https://raw.githubusercontent.com/ts-dart/TTunes/main/public/images/loading.gif' />
       </div>
     );
   }

@@ -38,3 +38,11 @@
   font-weight: bold;
   margin: 0%;
 }
+
+#audio-component {
+  background-color: #27AA7A;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+	border-radius: 50px;
+
+}

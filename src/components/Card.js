@@ -4,6 +4,18 @@ import { Link } from 'react-router-dom';
 import '../style/card.css';
 
 class Card extends Component {
+  formatDate(date) {
+    const arrayData = date.split('T')[0].split('-');
+    const formatedDate = `${arrayData[2]}/${arrayData[1]}/${arrayData[0]}`;
+    return formatedDate;
+  }
+
+  formatUrlImage(url) {
+    const arr = url.split('/');
+    arr.pop();
+    return `${arr.join('/')}/1000x1000bb.jpg`;
+  }
+
   render() {
     const {
       artistId,
@@ -16,28 +28,40 @@ class Card extends Component {
       trackCount,
     } = this.props;
 
+    const styles = { 
+      backgroundImage: `url(${this.formatUrlImage(artworkUrl100)})`,
+      backgroundSize: '100% auto', 
+    }
+
     return (
-      <div id="albumCard">
-        <h1>{ collectionName }</h1>
-        <p className="ghost">{ collectionId }</p>
-        Artista:
-        <h2>{ artistName }</h2>
-        <p className="ghost">{ artistId }</p>
-        Preço:
-        <h3>{ collectionPrice }</h3>
-        Lançamento:
-        <h3>{ releaseDate }</h3>
+      <div id="albumCard" style={styles}>
+        <div id='album-card-info'>
+          <h1 id='album-title'>{ collectionName }</h1>
+          <div className='artist-component-album'>
+            <h2>Artista: </h2>
+            <h2>{ artistName }</h2>
+          </div>
+          <div className='artist-component-album'>
+            <h2>Musicas: </h2>
+            <h2>{ trackCount }</h2>
+          </div>
+          <div className='artist-component-album'>
+            <h2>Lançamento: </h2>
+            <h2>{ this.formatDate(releaseDate) }</h2>
+          </div>
+          <Link
+            to={ `/album/${collectionId}` }
+            data-testid={ `link-to-album-${collectionId}` }
+          >
+            <button type="button" id="album-btn" /* className="btn btn-lg btn-success" */>
+              Abrir Album
+            </button>
+          </Link>
+        </div>
+        {/* <p className="ghost">{ artistId }</p>
+        <h3 className="ghost">{ collectionPrice }</h3> 
         <h4 className="ghost">{ artworkUrl100 }</h4>
-        Musicas:
-        <h4>{ trackCount }</h4>
-        <Link
-          to={ `/album/${collectionId}` }
-          data-testid={ `link-to-album-${collectionId}` }
-        >
-          <button type="button" id="album-btn" className="btn btn-lg btn-success">
-            Ver album
-          </button>
-        </Link>
+        <p className="ghost">{ collectionId }</p>*/}
       </div>
     );
   }
