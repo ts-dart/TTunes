@@ -1,4 +1,4 @@
-# Projeto TrybeTunes
+# Projeto TTunes
 ### Orientações
 A aplicação esta no online, acesse atravez do link abaixo:
 
