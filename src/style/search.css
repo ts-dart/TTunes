@@ -28,9 +28,23 @@
   text-align: center;
 }
 
-#cards-content {
+#title-albuns {
+  margin-bottom: 0px;
+  font-size: 18px;
+  text-shadow: 1px 1px 1px black;
+  font-weight: normal;
+}
+
+#div-cards-content { 
   margin: 0px auto;
   width: 80%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+#cards-content {
+  margin: -20px auto;
+  width: 100%;
   display: flex;
   flex-flow: row nowrap;
   overflow: scroll;

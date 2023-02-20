@@ -74,36 +74,41 @@ class MusicCard extends React.Component {
     } = this.state;
 
     return (
-      <div className="playerUp">
+      <div className="div-player">
         { loading
           ? <Loading typeLoadingClass={'loading-music-card'}/>
           : (
-            <div className="player">
-              <div id="fav">
-                <p className="favP">{ music }</p>
-                <label htmlFor="fav" id="labelFav">
-                  <p className="favP">Favoritar</p>
-                  <input
-                    type="checkbox"
-                    checked={ marked }
-                    onChange={ this.checkValidation }
-                    data-testid={ `checkbox-music-${trackId}` }
-                  />
-                </label>
+            <>
+              <div className="favbox-infos">
+                <div id="fav">
+                  <p className="favP">{ music }</p>
+                  <label htmlFor="fav" id="labelFav">
+                    <p className="favP">Favoritar</p>
+                    <input
+                      type="checkbox"
+                      checked={ marked }
+                      onChange={ this.checkValidation }
+                      data-testid={ `checkbox-music-${trackId}` }
+                    />
+                  </label>
+                </div>
+                <img src='images/icons8-cd-64 (1).png'/>
               </div>
-              <audio
-                data-testid="audio-component"
-                src={ preview }
-                id="audio-component"
-                controls
-              >
-                <track kind="captions" />
-                O seu navegador não suporta o elemento
-                {' '}
-                <code>audio</code>
-                .
-              </audio>
-            </div>
+              <div id='player-content'>
+                <audio
+                  data-testid="audio-component"
+                  src={ preview }
+                  id="audio-component"
+                  controls
+                >
+                  <track kind="captions" />
+                  O seu navegador não suporta o elemento
+                  {' '}
+                  <code>audio</code>
+                  .
+                </audio>
+              </div>
+            </>
           )}
       </div>
     );
