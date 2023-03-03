@@ -1,22 +1,28 @@
 footer {
-  width: 60%;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0px auto;
-  border-top: solid 2px #CED4DA;
-  padding: 15px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 }
 
 footer p {
   color: #a0a8af;
+  font-size: 14px;
+}
+
+#footerContent {
+  margin: 0px auto;
+  width: 15%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border-top: solid 1px #CED4DA;
 }
 
 #imgGithubLogo {
-  width: 28px;
+  width: 40px;
 }
 
 #imgLinkedinLogo {
-  width: 34px;
+  width: 32px; 
 }
