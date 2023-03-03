@@ -3,7 +3,6 @@ import React from 'react';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Loading from '../pages/Loading';
 import Card from './Card';
-import Footer from './Footer';
 import '../style/search.css';
 
 const MIN_LIMIT_CHAR_NAME = 2;
@@ -140,8 +139,6 @@ class SearchForm extends React.Component {
           message,
           artists,
         ) }
-        
-        <Footer/>
       </>
     );
   }
