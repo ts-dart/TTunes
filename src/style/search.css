@@ -68,6 +68,7 @@
 
 #cards-content::-webkit-scrollbar-thumb {
   background-color: #000;
+  border-radius: 0%;
 }
 
 #cards-content::-webkit-scrollbar-track {

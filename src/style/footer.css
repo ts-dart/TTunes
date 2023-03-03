@@ -1,0 +1,6 @@
+footer {
+  width: 60%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}

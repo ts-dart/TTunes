@@ -81,7 +81,7 @@ class MusicCard extends React.Component {
             <>
               <div className="favbox-infos">
                 <div id="fav">
-                  <p className="favP">{ music }</p>
+                  <p className="favP" id='titleMusic'>{ music }</p>
                   <label htmlFor="fav" id="labelFav">
                     <p className="favP">Favoritar</p>
                     <input
@@ -92,7 +92,7 @@ class MusicCard extends React.Component {
                     />
                   </label>
                 </div>
-                <img src='images/icons8-cd-64 (1).png'/>
+                <img src='https://raw.githubusercontent.com/ts-dart/TTunes/main/public/images/icons8-cd-64%20(1).png'/>
               </div>
               <div id='player-content'>
                 <audio
