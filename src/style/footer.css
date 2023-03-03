@@ -3,4 +3,20 @@ footer {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  align-items: center;
+  margin: 0px auto;
+  border-top: solid 2px #CED4DA;
+  padding: 15px;
+}
+
+footer p {
+  color: #a0a8af;
+}
+
+#imgGithubLogo {
+  width: 28px;
+}
+
+#imgLinkedinLogo {
+  width: 34px;
 }
